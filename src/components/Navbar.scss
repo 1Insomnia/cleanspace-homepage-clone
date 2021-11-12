@@ -1,0 +1,35 @@
+@use "../styles/vars";
+@use "../styles/helpers" as *;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: vars.$light;
+  padding: 0 20px;
+
+  @extend %flex-center-between;
+
+  height: 60px;
+
+  &__buttons__container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__logos__container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__logo-space {
+    width: 30px;
+  }
+
+  &__logo-esa {
+    height: 30px;
+  }
+}

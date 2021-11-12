@@ -1,0 +1,20 @@
+@mixin mq($size) {
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}
+
+%flex-center {
+  display: flex;
+  align-items: center;
+}
+
+%flex-center-between {
+  @extend %flex-center;
+  justify-content: space-between;
+}
+
+%flex-center-center {
+  @extend %flex-center;
+  justify-content: center;
+}

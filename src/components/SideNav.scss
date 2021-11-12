@@ -1,0 +1,92 @@
+@use "../styles/helpers" as *;
+@use "../styles/vars";
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #263238;
+  opacity: 0;
+  transition: all 0.3s ease-in-out 0s;
+  visibility: hidden;
+}
+
+.side-nav {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+
+  z-index: 500;
+  transition: all 0.3s ease-in-out 0s;
+
+  color: vars.$light;
+  background-color: vars.$primary;
+
+  transform: translateX(-100%);
+  padding: 20px;
+
+  @include mq(1024px) {
+    width: 25%;
+  }
+
+  &__btn {
+    z-index: 1000;
+    animation-name: spin;
+    animation-duration: 1500ms;
+    animation-timing-function: linear;
+    animation-iteration-count: initial;
+    animation-delay: 300ms;
+
+    svg {
+      color: vars.$light;
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  &__title {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 20px;
+  }
+
+  &__list {
+    &__link {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      padding: 15px 0;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        font-size: 150%;
+      }
+    }
+  }
+}
+
+.side-nav-open.side-nav {
+  transform: translateX(0);
+}
+
+.side-nav-open.overlay {
+  opacity: 0.9;
+  visibility: visible;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

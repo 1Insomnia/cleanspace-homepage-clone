@@ -1,0 +1,40 @@
+@use "../styles/helpers";
+@use "../styles/vars" as *;
+
+.hero {
+  height: 100vh;
+  width: 100%;
+
+  @extend %flex-center-center;
+  flex-direction: column;
+
+  text-align: center;
+
+  color: $light;
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 50px;
+    margin-bottom: 20px;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    opacity: 0.9;
+
+    @include helpers.mq(1024px) {
+      font-size: 100px;
+    }
+  }
+
+  &__sub-title {
+    opacity: 0.9;
+    font-size: 16px;
+  }
+
+  &__separator {
+    display: block;
+    height: 5px;
+    width: 50px;
+    background-color: $primary;
+    margin-bottom: 20px;
+  }
+}

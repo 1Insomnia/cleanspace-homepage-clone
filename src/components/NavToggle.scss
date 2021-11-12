@@ -1,0 +1,9 @@
+@use "../styles/vars";
+
+.nav-toggle {
+  svg {
+    color: vars.$light;
+    height: 24px;
+    width: 24px;
+  }
+}
